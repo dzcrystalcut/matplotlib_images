@@ -29,30 +29,24 @@ font_size = 12  # Font size for labels and title
 source_text = "Πηγή: Ελλ. Στατ. Υπηρ."  # Source text
 source_font_size = 11  # Font size for the source
 
-# Padding variables for breathing space
-padding_top = 0.1  # Extra space at the top
-padding_right = 0.05  # Extra space on the right
-padding_bottom = 0.5  # Increased space at the bottom for source text
-padding_left = 0.1  # Extra space on the left
-
-
 # Configure font for Greek text (for Matplotlib)
 plt.rcParams['font.family'] = font_family
 plt.rcParams['font.size'] = font_size
 
 # Create a bar chart
-plt.figure(figsize=(10, 7.5))
+plt.figure(figsize=(10, 7.5))  # Figure is a top-level container that holds all the elements of a plot or visualization
 plt.bar(days, accidents, color=bar_color)
 plt.xlabel("Ημέρες της Εβδομάδας", labelpad=15)  # Adjust label spacing
 plt.ylabel("Αριθμός Τροχαίων Ατυχημάτων", labelpad=15)  # Adjust label spacing
 plt.title("Τροχαία Ατυχήματα Ανά Ημέρα")
 
 # Adjust padding
+# matplotlib.pyplot.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)  # The position of the left edge of the subplots, as a fraction of the figure width.
 plt.subplots_adjust(
-    top=1 - padding_top,
-    right=1 - padding_right,
-    bottom=padding_bottom,
-    left=padding_left,
+    left = 0.05,
+    bottom = 0.05,
+    right = 0.05,
+    top = 0.05,
 )
 
 # Save the main image
