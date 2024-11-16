@@ -25,7 +25,7 @@ accidents = list(data.values())
 # Variables for customization
 bar_color = "skyblue"  # Customize bar color
 font_family = "Arial"  # Font for labels and title
-font_size = 12  # Font size for labels and title
+font_size = 16  # Font size for labels and title
 source_text = "Πηγή: Ελλ. Στατ. Υπηρ."  # Source text
 source_font_size = 11  # Font size for the source
 
@@ -42,7 +42,7 @@ plt.title("Τροχαία Ατυχήματα Ανά Ημέρα", pad=10)
 plt.subplots_adjust(bottom=0.15)
 
 plt.text(
-    0, -0.15, "Πηγή: Ελληνική Στατιστική Αρχή", fontsize=11, ha='left', transform=plt.gca().transAxes
+    0, -0.17, "Πηγή: Ελληνική Στατιστική Αρχή", fontsize=14, ha='left', transform=plt.gca().transAxes
 )
 
 # plt.show()
@@ -55,5 +55,5 @@ plt.close()  # Close the plot to release resources
 # Generate a thumbnail
 thumbnail_image_path = "Τροχαία_Ατυχήματα_Ανά_Ημέρα_s.png"
 with Image.open(main_image_path) as img:
-    img.thumbnail((500, 375))  # Set thumbnail size
+    img.thumbnail((280, 210))  # Set thumbnail size
     img.save(thumbnail_image_path)
