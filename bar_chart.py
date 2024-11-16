@@ -42,7 +42,7 @@ plt.title("Τροχαία Ατυχήματα Ανά Ημέρα", pad=10)
 plt.subplots_adjust(bottom=0.15)
 
 plt.text(
-    0, -0.15, "Test", fontsize=11, ha='left', transform=plt.gca().transAxes
+    0, -0.15, "Πηγή: Ελληνική Στατιστική Αρχή", fontsize=11, ha='left', transform=plt.gca().transAxes
 )
 
 # plt.show()
@@ -55,5 +55,5 @@ plt.close()  # Close the plot to release resources
 # Generate a thumbnail
 thumbnail_image_path = "Τροχαία_Ατυχήματα_Ανά_Ημέρα_s.png"
 with Image.open(main_image_path) as img:
-    img.thumbnail((280, 210))  # Set thumbnail size
+    img.thumbnail((500, 375))  # Set thumbnail size
     img.save(thumbnail_image_path)
