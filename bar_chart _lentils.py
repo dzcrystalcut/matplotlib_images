@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 data_json = '''
 {
     "Πρωτεΐνη": {"Roast Beef": 58, "Lentil Soup": 8},
-    "Φυτικές Ίνες": {"Roast Beef": 0, "Lentil Soup": 13},
+    "Σίδηρος (Fe)": {"Roast Beef": 21, "Lentil Soup": 10},
     "Ψευδάργυρος (Zn)": {"Roast Beef": 73, "Lentil Soup": 6},
     "Σελήνιο (Se)": {"Roast Beef": 55, "Lentil Soup": 2},
     "Φολικό Οξύ": {"Roast Beef": 3, "Lentil Soup": 39},
@@ -27,9 +27,9 @@ bar_width = 0.4  # Width of each bar
 bar_color_rb = "#A84A40"  # Color for Roast Beef bars
 bar_color_ls = "#B59B64"  # Color for Lentil Soup bars
 font_family = "Arial"  # Font for labels and title
-font_size = 12  # Font size for labels and title
-source_text = "Πηγή: Δεδομένα Διατροφής"  # Source text
-source_font_size = 11  # Font size for the source
+font_size = 18  # Font size for labels and title
+source_text = "Πηγή: Υπουργείο Γεωργίας Η.Π.Α. (USDA)"  # Source text
+source_font_size = 17  # Font size for the source
 watermark_text = "www.interai.gr"  # Watermark text
 
 # Configure font for Greek text (for Matplotlib)
@@ -40,28 +40,28 @@ plt.rcParams['font.size'] = font_size
 plt.figure(figsize=(12, 8), dpi=100)
 x = range(len(nutrients))  # X-axis positions
 plt.bar([pos - bar_width / 2 for pos in x], roast_beef_values, bar_width, color=bar_color_rb, label="Ψητό μοσχάρι")
-plt.bar([pos + bar_width / 2 for pos in x], lentil_soup_values, bar_width, color=bar_color_ls, label="Σούπα Φακής")
+plt.bar([pos + bar_width / 2 for pos in x], lentil_soup_values, bar_width, color=bar_color_ls, label="Σούπα φακής")
 
 # Customize chart
-plt.xlabel("Θρεπτικά Συστατικά", labelpad=10)
-plt.ylabel("% Ημερήσιας Συνιστώμενης Ποσότητας", labelpad=10)
-plt.title("Σύγκριση Θρεπτικών Συστατικών (100γρ)", pad=15)
+plt.xlabel("Θρεπτικά Συστατικά", labelpad=5)
+plt.ylabel("% Ημερήσιας Συνιστώμενης Ποσότητας", labelpad=5)
+plt.title("Σύγκριση Θρεπτικών Συστατικών Μοσχαριού - Φακής (100γρ)", pad=15)
 plt.xticks(x, nutrients, rotation=20, ha='right')
-plt.legend(loc="upper right")
+plt.legend(loc="upper left")
 plt.subplots_adjust(bottom=0.25)
 
 # Add source text
 plt.text(
-    0, -0.2, source_text, fontsize=source_font_size, ha='left', transform=plt.gca().transAxes
+    0, -0.35, source_text, fontsize=source_font_size, ha='left', transform=plt.gca().transAxes
 )
 
 # Save the main image
-main_image_path = "Σύγκριση_Θρεπτικών_Συστατικών.png"
+main_image_path = "Σύγκριση_Θρεπτικών_Συστατικών_Μοσχαριού_Φακής.png"
 plt.savefig(main_image_path)
 plt.close()
 
 # Generate a watermarked version of the basic image
-watermarked_image_path = "Σύγκριση_Θρεπτικών_Συστατικών_watermarked.png"
+watermarked_image_path = "Σύγκριση_Θρεπτικών_Συστατικών_Μοσχαριού_Φακής_watermarked.png"
 with Image.open(main_image_path) as img:
     draw = ImageDraw.Draw(img)
     width, height = img.size
@@ -79,7 +79,7 @@ with Image.open(main_image_path) as img:
     img.save(watermarked_image_path)
 
 # Generate a watermarked thumbnail
-thumbnail_image_path = "Σύγκριση_Θρεπτικών_Συστατικών_thumbnail.png"
+thumbnail_image_path = "Σύγκριση_Θρεπτικών_Συστατικών_Μοσχαριού_Φακής_thumbnail.png"
 with Image.open(watermarked_image_path) as img:
     img.thumbnail((500, 375))  # Set thumbnail size
     img.save(thumbnail_image_path)
