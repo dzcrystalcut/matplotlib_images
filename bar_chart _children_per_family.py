@@ -53,7 +53,7 @@ plt.rcParams['font.size'] = font_size
 # Create a vertical bar chart
 plt.figure(figsize=(12, 8), dpi=100)
 x = range(len(categories))  # X-axis positions
-bars = plt.bar(x, percentages, color=bar_color)
+bars = plt.bar(x, percentages, color=["red" if i == 0 else "grey" for i in range(len(categories))])
 
 plt.ylim(0, 70)
 
