@@ -54,17 +54,24 @@ for i, label in enumerate(series_labels):
     plt.plot(df.index, trendline, linestyle="--", color=colors[i], alpha=0.6)
 
 # Customize chart
-plt.title("Επισκέψεις σελίδων στη Wikipedia από 11/2015 έως 10/2024 ανά μήνα", pad=20)
+plt.title("Επισκέψεις σελίδων στη Wikipedia από 11/2015 έως 10/2024 ανά μήνα", pad=25, fontsize=18)
 plt.xlabel("Μήνας", labelpad=5)
 plt.ylabel("Επισκέψεις", labelpad=5)
 
 # Format x-axis labels to show only January labels in Greek
 x_labels = [dt.strftime("%b %Y") if dt.month == 1 else "" for dt in df.index]
-plt.xticks(df.index, x_labels, rotation=45, ha="right")
+plt.xticks(
+    ticks=df.index[df.index.month == 1],  # Only include indices where the month is January
+    labels=[f"ΙAN {dt.year}" for dt in df.index if dt.month == 1],
+    rotation=45,
+    ha="right",
+    fontsize=18
+)
 plt.gca().get_yaxis().set_major_formatter(plt.FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", ".")))
 
 # Remove the legend
 plt.legend().remove()
+plt.subplots_adjust(left=0.15, bottom=0.25, right=0.90, top=0.85)
 
 # Add source text
 plt.text(
@@ -73,7 +80,7 @@ plt.text(
 
 # Save the main image
 main_image_path = "greece_mykonos_santorini_wikipedia_pageviews_timeseries.png"
-plt.tight_layout()
+
 plt.savefig(main_image_path)
 plt.close()
 
