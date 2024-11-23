@@ -2,7 +2,18 @@ import psycopg2
 from psycopg2.extras import Json
 
 # Variables for the new record
-stats_data = {"key1": "value1", "key2": "value2"}  # Example JSON data
+stats_data = {
+  "1_children_families": 1028658,
+  "1_children_families_percentage": 53.3,
+  "2_children_families": 720909,
+  "2_children_families_percentage": 37.4,
+  "3_children_families": 144023,
+  "3_children_families_percentage": 7.5,
+  "4_children_families": 28641,
+  "4_children_families_percentage": 1.5,
+  "5_children_families": 6302,
+  "5_children_families_percentage": 0.3
+}  # Example JSON data
 tags = "example, test, stats"
 slug = "example-slug"
 source = "example-source"
