@@ -89,7 +89,7 @@ for bars, values in [(bars_before, values_before_1980), (bars_after, values_afte
         )
 
 # Customize chart
-plt.title("Κατοικούμενες κατοικίες ανά περίοδο κατασκευής", pad=15)
+plt.title("Κατοικούμενες κατοικίες ανά περίοδο κατασκευής", pad=20)
 wrapped_labels = [textwrap.fill(label, width=20) for label in locations]
 plt.xticks(x, wrapped_labels, ha='center')
 
