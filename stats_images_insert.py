@@ -12,7 +12,7 @@ title = "Επισκέψεις των σελίδων για Greece, Santorini κ�
 description = "Στο παρόν γράφημα παρουσιάζεται η Κατανομή Επισκέψεων των σελίδων για Greece, Santorini και Mykonos στη Wikipedia από 11/2015 έως 10/2024 ανά μήνα προκειμένου να δειχθεί η τουριστική τάση. Στο βαθμό που οι επισκέψεις στη Wikipedia αντανακλούν αναλογικά τις αναζητήσεις των τουριστών (που χρησιμοποιούν όρους στα αγγλικά), το γράφημα αποκτά χαρακτήρα πρόβλεψης."
 w_image_file_path = "/stats_images_watermarked/greece_mykonos_santorini_wikipedia_pageviews_timeseries_watermarked.png"
 image_file_path = "/stats_images/greece_mykonos_santorini_wikipedia_pageviews_timeseries.png"
-thumbnail_file_path = "/stats_thumbnails/greece_mykonos_santorini_wikipedia_pageviews_timeseries.png"
+thumbnail_file_path = "/stats_thumbnails/greece_mykonos_santorini_wikipedia_pageviews_timeseries_thumbnail.png"
 
 # Database connection details
 db_config = {
