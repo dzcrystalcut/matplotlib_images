@@ -162,12 +162,12 @@ for bars, values, label in [(bars_men, values_men, "Άνδρες"), (bars_women,
 
 
 # Save the main image
-main_image_path = "Αξιοσημείωτα_Ποσοστά_Ανδρών_Γυναικών.png"
+main_image_path = "Αξιοσημείωτα_Ποσοστά_Αλλοδαπών_Ανδρών_Γυναικών.png"
 plt.savefig(main_image_path)
 plt.close()
 
 # Generate a watermarked version of the basic image
-watermarked_image_path = "Αξιοσημείωτα_Ποσοστά_Ανδρών_Γυναικών_watermarked.png"
+watermarked_image_path = "Αξιοσημείωτα_Ποσοστά_Αλλοδαπών_Ανδρών_Γυναικών_watermarked.png"
 with Image.open(main_image_path) as img:
     draw = ImageDraw.Draw(img)
     width, height = img.size
@@ -185,7 +185,7 @@ with Image.open(main_image_path) as img:
     img.save(watermarked_image_path)
 
 # Generate a thumbnail version of the watermarked image
-thumbnail_image_path = "Αξιοσημείωτα_Ποσοστά_Ανδρών_Γυναικών_thumbnail.png"
+thumbnail_image_path = "Αξιοσημείωτα_Ποσοστά_Αλλοδαπών_Ανδρών_Γυναικών_thumbnail.png"
 with Image.open(watermarked_image_path) as img:
     img.thumbnail((500, 375))  # Set thumbnail size
     img.save(thumbnail_image_path)
